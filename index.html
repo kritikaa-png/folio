@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Kritikaa">
+    <title>Kritikaa - Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+href="https://fonts.googleapis.com/css2?family-Inter:wght@400;500;600;700,800&display-swap"
+rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="nav" aria-label="Main Navigation">
+        <div class="container nav-inner">
+            <span class="nav-brand">Your Name</span>
+            <ul class="nav-links">
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button class="theme-btn" id="theme-toggle" aria-label="Toggle dark theme">Dark Mode</button></li>
+            </ul>
+        </div>
+    </nav>
+    <header class="hero" id="home">
+        <div class="container">
+            <p class="hero-tag reveal">Hey,I'm</p>
+            <h1 class="hero-name reveal">Kritikaa</h1>
+            <p class="hero-role reveal">UI Designer &amp;Web Developer -<span class="highlight">B.Tech CSE Kerala</span></p>
+            <p class="hero-bio reveal">I am a passionate UI designer and web developer with a strong background in computer science.</p>
+            <div class="hero-ctas reveal">
+                <a href="#projects" class="btn btn-primary">View My Projects</a>
+                <a href="https://www.figma.com/design/vwP2vuxH9NTA7CxFbSsoMh/Tide-AI?node-id=0-1&t=inEZCi8MX3JXGI0x-1" target="_blank" rel="noopener" class="btn btn-secondary">View My Figma Design</a>
+            </div>
+        </div>
+    </header>
+        <main>
+            <section class="section" id="projects">
+                <div class="container">
+                    <p class="section-label">01-Work</p>
+                    <h2 class="section-title">My Projects</h2>
+                        <div class="project-grid">
+                            <article class="project-card reveal">
+                                <span class="card-tag>UI/UX Design</span>
+                                <h3 class="card-title">TIDE</h3>
+                                <p class="card-desc">A task-manager app design in Figma</p>
+                                <div class="card-meta">
+                                    <span class="chip">Figma</span>
+                                    <span class="chip">Design System</span>
+                                </div>
+                                <a href="https://www.figma.com/design/vwP2vuxH9NTA7CxFbSsoMh/Tide-AI?node-id=0-1&t=inEZCi8MX3JXGI0x-1" target="_blank" rel="noopener" class="card-link">View Project</a>
+                                </article>
+                            <article class="project-card reveal">
+                                <span class="card-tag>Web Development</span>
+                                <h3 class="card-title">Folio</h3>
+                                <p class="card-desc">This portfolio site.Handwritten in semantic HTML, a CSS design system carried straight from Figma and Dark Mode Toggle in vanilla JavaScript,Deployed on Netlify.</p>
+                                <div class="card-meta">
+                                    <span class="chip">HTML</span>
+                                    <span class="chip">CSS</span>
+                                    <span class="chip">JavaScript</span>
+                                </div>
+                                <a href="https://github.com/kritikaa-png" target="_blank" rel="noopener" class="card-link">View code &#8599;</a>
+                                </article>
+                            <article class="project-card reveal">
+                                <span class="card-tag>Automation</span>
+                                <h3 class="card-title">PULSE</h3>
+                                <p class="card-desc">Python Bot sends a daily summary of your tasks</p>
+                                <div class="card-meta">
+                                    <span class="chip">Python</span>
+                                    <span class="chip">GitHub Actions</span>
+                                </div>
+                             <a href="#contact" class="card-link">In progress &#8594;</a>
+                            </article>
+                        </div>
+                        </div>
+            </section>
+            <section class="section section-alt" id="skills">
+                <div class="container">
+                    <p class="section-label">02 &#8212;Toolkit</p>
+                    <h2 class="section-title">My Skills</h2>
+                    <div class="skills-list">
+                    <div class="skill reveal">
+                        <div class="skill-head">
+                            <span class="skill-name">Figma &amp;UI Design</span>
+                            <span class="skill-pct">85%</span>
+                        </div>
+                        <div class="skill-track">
+                            <div class="skill-fill" style="--w: 85%;background: var(--primary);"></div>
+                        </div>
+                    </div>
+                    <div class="skill reveal">
+                        <div class="skill-head">
+                            <span class="skill-name">HTML &amp; CSS</span>
+                            <span class="skill-pct">75%</span>
+                        </div>
+                        <div class="skill-track">
+                            <div class="skill-fill" style="--w: 75%;background: var(--primary);"></div>
+                        </div>
+                    </div>
+                    <div class="skill reveal">
+                        <div class="skill-head">
+                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-pct">55%</span>
+                        </div>
+                        <div class="skill-track">
+                            <div class="skill-fill" style="--w: 55%;background: var(--primary);"></div>
+                        </div>
+                    </div>
+                    <div class="skill reveal">
+                        <div class="skill-head">
+                            <span class="skill-name">Python(learning)</span>
+                            <span class="skill-pct">35%</span>
+                        </div>
+                        <div class="skill-track">
+                            <div class="skill-fill" style="--w: 35%;background: var(--pri-high);"></div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </section>
+            <section class="section" id="contact">
+                <div class="container">
+                    <p class="section-label">03 &#8212;Say Hello</p>
+                    <h2 class="section-title">Contact</h2>
+                    <p class="contact-lead">I'm currently open to internships and opportunities.</p>
+                    <div class="contact-links">
+                        <a href="mailto: srkritikaa@gmail.com" class="contact-link">
+                            <span class="contact-link-label">Email</span>
+                            <span class="contact-link-value">srkritikaa@gmail.com</span>
+                        </a>
+                        <a href="https://github.com/kritikaa-png" target="_blank" rel="noopener" class="contact-link">
+                            <span class="contact-link-label">GitHub</span>
+                            <span class="contact-link-value">github.com/srkritikaa &#8599;</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/kritikaa-s-r-96475031b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener" class="contact-link">
+                            <span class="contact-link-label">LinkedIn</span>
+                            <span class="contact-link-value">linkedin.com/in/srkritikaa &#8599;</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <p>Built from scratch with HTML, CSS &amp; JavaScript &#8212;ZERODEV 2026.</p>
+                <p class="footer-muted">&copy; 2026 Kritikaa. All rights reserved.</p>
+            </div>
+        </footer>
+        <button class="to-top" id="to-top" aria-label="Scroll to top">&#8593;</button>
+        <script src="script.js"></script>
+</body>
+</html>
