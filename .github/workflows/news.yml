@@ -1,0 +1,30 @@
+name: Daily News Email
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "30 1 * * *"
+
+jobs:
+  send-news:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run News Script
+        env:
+          EMAIL: ${{ secrets.EMAIL }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+        run: python newsmail.py

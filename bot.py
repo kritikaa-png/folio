@@ -1,5 +1,4 @@
 import requests
-import os
 from datetime import date
 def get_weather(city="Thiruvananthapuram"):
     url=f"https://wttr.in/{city}?format=3"
