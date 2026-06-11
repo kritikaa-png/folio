@@ -27,4 +27,4 @@ jobs:
         env:
           EMAIL: ${{ secrets.EMAIL }}
           PASSWORD: ${{ secrets.PASSWORD }}
-        run: python newsmail.py
+        run: python news_mail/newsmail.py
