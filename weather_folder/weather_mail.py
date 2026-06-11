@@ -48,19 +48,16 @@ if temp>35 or "rain" in condition.lower():
     msg["Subject"] = f"Weather Report - {CITY}"
     msg["From"] = EMAIL
     msg["To"] = EMAIL
-
 # Send email
     server = smtplib.SMTP("smtp.gmail.com", 587)
     server.starttls()
     server.login(EMAIL, PASSWORD)
-
     server.sendmail(
         EMAIL,
         EMAIL,
         msg.as_string()
 )
-
     server.quit()
     print("Alert email sent successfully!")
 else: 
-    print("Weather email sent successfully!")
+    print("No alert triggered.")
