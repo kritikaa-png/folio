@@ -2,7 +2,6 @@ import requests
 import smtplib
 import os
 from email.mime.text import MIMEText
-
 # GitHub Secrets
 API_KEY = os.environ["API_KEY"]
 EMAIL = os.environ["EMAIL"]
@@ -20,9 +19,13 @@ temp = data["current"]["temp_c"]
 condition = data["current"]["condition"]["text"]
 humidity = data["current"]["humidity"]
 wind = data["current"]["wind_kph"]
+print(f"Temperature: {temp}°C")
+print(f"Condition: {condition}")
+print(f"Humidity: {humidity}%")
+print(f"Wind Speed: {wind} kph")
 
-# HTML Email
-html = f"""
+if temp>35 or "rain" in condition.lower():
+    html = f"""
 <html>
 <body>
     <h2>🌤 Daily Weather Report</h2>
@@ -32,6 +35,11 @@ html = f"""
     <p><b>Humidity:</b> {humidity}%</p>
     <p><b>Wind Speed:</b> {wind} kph</p>
     <hr>
+    <p>
+            Alert triggered because:
+            {"Temperature exceeded 35°C" if temp > 35 else "Rain detected"}
+        </p>
+
     <p>Generated automatically using Python & GitHub Actions.</p>
 </body>
 </html>
@@ -54,5 +62,6 @@ server.sendmail(
 )
 
 server.quit()
-
+print("Alert email sent successfully!")
+else:
 print("Weather email sent successfully!")
