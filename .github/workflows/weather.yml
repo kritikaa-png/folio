@@ -1,10 +1,9 @@
 name: Daily Weather Email
-
 on:
   workflow_dispatch:
   schedule:
     - cron: "30 1 * * *"
-
+  
 jobs:
   send-weather:
     runs-on: ubuntu-latest
@@ -26,4 +25,4 @@ jobs:
           API_KEY: ${{ secrets.API_KEY }}
           EMAIL: ${{ secrets.EMAIL }}
           PASSWORD: ${{ secrets.PASSWORD }}
-        run: python weather_mail.py
+        run: python weather_folder/weather_mail.py
