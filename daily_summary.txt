@@ -6,6 +6,6 @@
         WEATHER
         Thiruvananthapuram: 🌫️  +29°C
         TODAY'S QUOTE
-        "There are no mistakes in life, only lessons." - Robin Sharma
+        "Being kind is more important than being right." - David Brinkley
 
     ==================================

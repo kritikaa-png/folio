@@ -9,15 +9,19 @@ def get_weather(city="Thiruvananthapuram"):
     except Exception as e:
         return f"Weather Unavailable: ({e})"
 def get_quote():
-    url="https://zenquotes.io/api/random"
+    url = "https://zenquotes.io/api/random"
     try:
-        response=requests.get(url,timeout=10)
+        response = requests.get(url, timeout=10)
+        print("Status Code:", response.status_code)
+        print("Response:", response.text)
         response.raise_for_status()
-        data=response.json()
-        quote=data[0]["q"]
-        author=data[0]["a"]
+        data = response.json()
+        quote = data[0]["q"]
+        author = data[0]["a"]
         return f'"{quote}" - {author}'
+
     except Exception as e:
+        print("Quote Error:", e)
         return f"Quote Unavailable: ({e})"
 def build_summary():
     today=date.today().strftime("%A %B %d %Y")
