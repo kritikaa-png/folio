@@ -7,8 +7,11 @@ EMAIL = os.environ["EMAIL"]
 PASSWORD = os.environ["PASSWORD"]
 
 feeds = {
+    feeds = {
     "BBC": "http://feeds.bbci.co.uk/news/rss.xml",
-    "CNN": "http://rss.cnn.com/rss/edition.rss"
+    "CNN": "http://rss.cnn.com/rss/edition.rss",
+    "NYTimes": "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
+}
 }
 
 html = """
