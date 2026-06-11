@@ -65,5 +65,3 @@ TODAY'S QUOTE
 ## Author
 
 Kritikaa
-
-Built as part of my learning journey in Python automation and DevOps workflows.
