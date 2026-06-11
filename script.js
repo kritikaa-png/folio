@@ -27,3 +27,27 @@ const observer = new IntersectionObserver((entries) => {
     threshold: 0.15 
 });
 revealItems.forEach((item) => observer.observe(item));
+const buttons = document.querySelectorAll("[data-filter]");
+const cards = document.querySelectorAll(".project-card");
+const count = document.getElementById("count");
+
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        const filter = button.dataset.filter;
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+            if (
+                filter === "all" ||
+                card.classList.contains(filter)
+            ) {
+                card.classList.remove("hide");
+                visibleCount++;
+            } else {
+                card.classList.add("hide");
+            }
+        });
+
+        count.textContent = visibleCount;
+    });
+});

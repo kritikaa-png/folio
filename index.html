@@ -19,6 +19,8 @@ rel="stylesheet">
             <ul class="nav-links">
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#figma">Figma</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><button class="theme-btn" id="theme-toggle" aria-label="Toggle dark theme">Dark Mode</button></li>
             </ul>
@@ -41,9 +43,21 @@ rel="stylesheet">
                 <div class="container">
                     <p class="section-label">01-Work</p>
                     <h2 class="section-title">My Projects</h2>
+
+<div class="filters">
+    <button data-filter="all">All</button>
+    <button data-filter="design">Design</button>
+    <button data-filter="web">Web</button>
+    <button data-filter="code">Code</button>
+</div>
+
+<p class="project-count">
+    Total Projects: <span id="count">3</span>
+</p>
+
                         <div class="project-grid">
-                            <article class="project-card reveal">
-                                <span class="card-tag>UI/UX Design</span>
+                            <article class="project-card reveal design">
+                                <span class="card-tag">UI/UX Design</span>
                                 <h3 class="card-title">TIDE</h3>
                                 <p class="card-desc">A task-manager app design in Figma</p>
                                 <div class="card-meta">
@@ -52,7 +66,7 @@ rel="stylesheet">
                                 </div>
                                 <a href="https://www.figma.com/design/vwP2vuxH9NTA7CxFbSsoMh/Tide-AI?node-id=0-1&t=inEZCi8MX3JXGI0x-1" target="_blank" rel="noopener" class="card-link">View Project</a>
                                 </article>
-                            <article class="project-card reveal">
+                            <article class="project-card reveal web">
                                 <span class="card-tag>Web Development</span>
                                 <h3 class="card-title">Folio</h3>
                                 <p class="card-desc">This portfolio site.Handwritten in semantic HTML, a CSS design system carried straight from Figma and Dark Mode Toggle in vanilla JavaScript,Deployed on Netlify.</p>
@@ -63,7 +77,7 @@ rel="stylesheet">
                                 </div>
                                 <a href="https://github.com/kritikaa-png" target="_blank" rel="noopener" class="card-link">View code &#8599;</a>
                                 </article>
-                            <article class="project-card reveal">
+                            <article class="project-card reveal code">
                                 <span class="card-tag>Automation</span>
                                 <h3 class="card-title">PULSE</h3>
                                 <p class="card-desc">Python Bot sends a daily summary of your tasks</p>
@@ -120,6 +134,57 @@ rel="stylesheet">
                 </div>
                 </div>
             </section>
+            <!-- Blog Section -->
+<section id="blog">
+  <div class="container">
+    <h2 class="section-title">Latest Blog Posts</h2>
+
+    <div class="blog-grid">
+
+      <div class="blog-card">
+        <h3>Getting Started with Web Development</h3>
+        <p class="blog-date">June 1, 2026</p>
+        <p>
+          Learn the fundamentals of HTML, CSS, and JavaScript to build
+          modern responsive websites from scratch.
+        </p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+
+      <div class="blog-card">
+        <h3>UI/UX Design Basics</h3>
+        <p class="blog-date">June 5, 2026</p>
+        <p>
+          Discover simple design principles that improve usability,
+          accessibility, and user engagement.
+        </p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+
+      <div class="blog-card">
+        <h3>JavaScript Tips for Beginners</h3>
+        <p class="blog-date">June 8, 2026</p>
+        <p>
+          Explore practical JavaScript techniques that help create
+          interactive and dynamic web applications.
+        </p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section id="figma">
+    <h2>Tide AI - Figma Prototype</h2>
+
+    <iframe
+        style="border:1px solid rgba(0,0,0,0.1);"
+        width="100%"
+        height="600"
+        src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/design/vwP2vuxH9NTA7CxFbSsoMh/Tide-AI?node-id=0-1&t=SEMexh2nhd7nnqE5-1"
+        allowfullscreen>
+    </iframe>
+</section>
             <section class="section" id="contact">
                 <div class="container">
                     <p class="section-label">03 &#8212;Say Hello</p>
@@ -150,5 +215,31 @@ rel="stylesheet">
         </footer>
         <button class="to-top" id="to-top" aria-label="Scroll to top">&#8593;</button>
         <script src="script.js"></script>
+        <script>
+const buttons = document.querySelectorAll("[data-filter]");
+const cards = document.querySelectorAll(".project-card");
+const count = document.getElementById("count");
+
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        const filter = button.dataset.filter;
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+            if (
+                filter === "all" ||
+                card.classList.contains(filter)
+            ) {
+                card.classList.remove("hide");
+                visibleCount++;
+            } else {
+                card.classList.add("hide");
+            }
+        });
+
+        count.textContent = visibleCount;
+    });
+});
+</script>
 </body>
 </html>
