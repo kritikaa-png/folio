@@ -23,45 +23,44 @@ print(f"Temperature: {temp}°C")
 print(f"Condition: {condition}")
 print(f"Humidity: {humidity}%")
 print(f"Wind Speed: {wind} kph")
-
 if temp>35 or "rain" in condition.lower():
     html = f"""
-<html>
-<body>
-    <h2>🌤 Daily Weather Report</h2>
-    <p><b>City:</b> {CITY}</p>
-    <p><b>Temperature:</b> {temp}°C</p>
-    <p><b>Condition:</b> {condition}</p>
-    <p><b>Humidity:</b> {humidity}%</p>
-    <p><b>Wind Speed:</b> {wind} kph</p>
-    <hr>
-    <p>
+    <html>
+    <body>
+        <h2>🌤 Daily Weather Report</h2>
+        <p><b>City:</b> {CITY}</p>
+        <p><b>Temperature:</b> {temp}°C</p>
+        <p><b>Condition:</b> {condition}</p>
+        <p><b>Humidity:</b> {humidity}%</p>
+        <p><b>Wind Speed:</b> {wind} kph</p>
+        <hr>
+        <p>
             Alert triggered because:
             {"Temperature exceeded 35°C" if temp > 35 else "Rain detected"}
         </p>
 
-    <p>Generated automatically using Python & GitHub Actions.</p>
-</body>
-</html>
-"""
+        <p>Generated automatically using Python & GitHub Actions.</p>
+    </body>
+    </html>
+    """
 
-msg = MIMEText(html, "html")
-msg["Subject"] = f"Weather Report - {CITY}"
-msg["From"] = EMAIL
-msg["To"] = EMAIL
+    msg = MIMEText(html, "html")
+    msg["Subject"] = f"Weather Report - {CITY}"
+    msg["From"] = EMAIL
+    msg["To"] = EMAIL
 
 # Send email
-server = smtplib.SMTP("smtp.gmail.com", 587)
-server.starttls()
-server.login(EMAIL, PASSWORD)
+    server = smtplib.SMTP("smtp.gmail.com", 587)
+    server.starttls()
+    server.login(EMAIL, PASSWORD)
 
-server.sendmail(
-    EMAIL,
-    EMAIL,
-    msg.as_string()
+    server.sendmail(
+        EMAIL,
+        EMAIL,
+        msg.as_string()
 )
 
-server.quit()
-print("Alert email sent successfully!")
-else:
-print("Weather email sent successfully!")
+    server.quit()
+    print("Alert email sent successfully!")
+else: 
+    print("Weather email sent successfully!")
