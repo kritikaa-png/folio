@@ -51,3 +51,29 @@ buttons.forEach(button => {
         count.textContent = visibleCount;
     });
 });
+fetch("projects.json")
+  .then(response => response.json())
+  .then(projects => {
+
+    const container =
+      document.getElementById("projects-container");
+
+    projects.forEach(project => {
+
+      const card = document.createElement("div");
+
+      card.classList.add("project-card");
+
+      card.innerHTML = `
+        <h3>${project.name}</h3>
+        <p>${project.description || "No description"}</p>
+        <p>⭐ ${project.stars}</p>
+        <a href="${project.url}" target="_blank">
+          View Repository
+        </a>
+      `;
+
+      container.appendChild(card);
+    });
+
+  });
